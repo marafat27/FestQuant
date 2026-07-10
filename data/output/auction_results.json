@@ -1,0 +1,12 @@
+{
+  "eventId": "E003",
+  "auctionType": "SINGLE_SEAT_SECOND_PRICE",
+  "premiumSeats": 1,
+  "winners": [
+    {"userId": "U042", "bidderName": "Anvi Jain", "bidAmount": 4000, "finalPayment": 4000}
+  ],
+  "clearingPrice": 4000,
+  "reservePrice": 1725,
+  "finalPayment": 4000,
+  "explanation": "Highest eligible bidder wins one premium seat and pays the second-highest eligible bid or the dynamic reserve price, whichever is higher. This second-price rule makes truthful bidding rational."
+}

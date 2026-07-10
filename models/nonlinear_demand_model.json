@@ -1,0 +1,65 @@
+{
+  "modelName": "FestQuant Nonlinear Logistic Demand Model",
+  "modelType": "Logistic nonlinear regression",
+  "createdAt": "2026-07-09T21:27:57",
+  "equation": "DemandRatio = 1 / (1 + exp(-z)); z = beta0 + beta1*logViews + beta2*wishlistRate + beta3*soldRatio + beta4*urgencyIndex + beta5*slotPopularity - beta6*priceIndex",
+  "features": [
+    "logViews",
+    "wishlistRate",
+    "soldRatio",
+    "urgencyIndex",
+    "slotPopularity",
+    "priceIndex"
+  ],
+  "coefficients": {
+    "beta0Intercept": -8.989587526692146,
+    "beta1LogViews": 0.18594870639937763,
+    "beta2WishlistRate": 0.7498887802711589,
+    "beta3SoldRatio": 0.3522491740956738,
+    "beta4UrgencyIndex": 0.8505708477603315,
+    "beta5SlotPopularity": 0.2615972669157305,
+    "beta6PriceSensitivity": 0.45
+  },
+  "priceSensitivityFixed": true,
+  "priceSensitivityNote": "priceIndex had almost no variation in the current synthetic history, so beta6 was kept as a calibrated sensitivity. This is allowed for the project stage and is useful for the next dynamic-pricing module.",
+  "metrics": {
+    "modelType": "Logistic nonlinear regression",
+    "inputFile": "data/output/regression_training_rows.json",
+    "totalRows": 7190,
+    "trainRows": 5750,
+    "testRows": 1440,
+    "priceIndexMin": 1.0,
+    "priceIndexMax": 1.0,
+    "priceSensitivityFixed": true,
+    "train": {
+      "rows": 5750,
+      "maeDemandRatio": 0.0008325803793298069,
+      "rmseDemandRatio": 0.001145007772144803,
+      "mapeDemandRatioPercent": 65.6345997376946,
+      "crossEntropyLoss": 0.006706743856895622,
+      "rSquaredOnDemandRatio": -0.018966614422112338,
+      "averageActualDemandRatio": 0.0008245739130434783,
+      "averagePredictedDemandRatio": 0.00047600123159667146
+    },
+    "test": {
+      "rows": 1440,
+      "maeDemandRatio": 0.0014627466991649861,
+      "rmseDemandRatio": 0.0017538038320420802,
+      "mapeDemandRatioPercent": 50.502254135964876,
+      "crossEntropyLoss": 0.015825306254253216,
+      "rSquaredOnDemandRatio": -0.5594307153744742,
+      "averageActualDemandRatio": 0.002161111111111111,
+      "averagePredictedDemandRatio": 0.0011161206148361657
+    },
+    "allRows": {
+      "rows": 7190,
+      "maeDemandRatio": 0.000958788932954655,
+      "rmseDemandRatio": 0.001290151430940847,
+      "mapeDemandRatioPercent": 60.87906165246881,
+      "crossEntropyLoss": 0.008532992793223145,
+      "rSquaredOnDemandRatio": 0.026667330879042606,
+      "averageActualDemandRatio": 0.0010922531293463143,
+      "averagePredictedDemandRatio": 0.0006042031664874742
+    }
+  }
+}

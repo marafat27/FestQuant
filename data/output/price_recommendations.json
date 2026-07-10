@@ -1,0 +1,112 @@
+[
+  {
+    "eventId": "E001",
+    "basePrice": 650.0,
+    "recommendedPrice": 777.5,
+    "premiumSeats": 114,
+    "forecastDemand": 2.34,
+    "expectedRevenue": 1818.51,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 650 to Rs 778 because trend is STABLE, sold ratio is 95.9%, latest views are 1627, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E002",
+    "basePrice": 1250.0,
+    "recommendedPrice": 1487.5,
+    "premiumSeats": 55,
+    "forecastDemand": 0.74,
+    "expectedRevenue": 1105.42,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 1250 to Rs 1488 because trend is STABLE, sold ratio is 70.5%, latest views are 792, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E003",
+    "basePrice": 1150.0,
+    "recommendedPrice": 977.5,
+    "premiumSeats": 24,
+    "forecastDemand": 0.0,
+    "expectedRevenue": 0.0,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was reduced from Rs 1150 to Rs 978 because trend is STABLE, sold ratio is 100.0%, latest views are 1242, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E004",
+    "basePrice": 1000.0,
+    "recommendedPrice": 1200.0,
+    "premiumSeats": 69,
+    "forecastDemand": 8.08,
+    "expectedRevenue": 9692.17,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 1000 to Rs 1200 because trend is STABLE, sold ratio is 65.3%, latest views are 918, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E005",
+    "basePrice": 1200.0,
+    "recommendedPrice": 1420.0,
+    "premiumSeats": 53,
+    "forecastDemand": 0.58,
+    "expectedRevenue": 825.12,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 1200 to Rs 1420 because trend is STABLE, sold ratio is 84.5%, latest views are 1378, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E006",
+    "basePrice": 300.0,
+    "recommendedPrice": 355.0,
+    "premiumSeats": 70,
+    "forecastDemand": 2.27,
+    "expectedRevenue": 807.59,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 300 to Rs 355 because trend is STABLE, sold ratio is 73.0%, latest views are 1126, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E007",
+    "basePrice": 1150.0,
+    "recommendedPrice": 1377.5,
+    "premiumSeats": 42,
+    "forecastDemand": 4.97,
+    "expectedRevenue": 6845.31,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 1150 to Rs 1378 because trend is STABLE, sold ratio is 70.0%, latest views are 1103, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E008",
+    "basePrice": 800.0,
+    "recommendedPrice": 955.0,
+    "premiumSeats": 77,
+    "forecastDemand": 3.17,
+    "expectedRevenue": 3028.9,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 800 to Rs 955 because trend is STABLE, sold ratio is 76.8%, latest views are 952, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E009",
+    "basePrice": 500.0,
+    "recommendedPrice": 600.0,
+    "premiumSeats": 113,
+    "forecastDemand": 0.55,
+    "expectedRevenue": 327.38,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 500 to Rs 600 because trend is STABLE, sold ratio is 65.2%, latest views are 800, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  },
+  {
+    "eventId": "E010",
+    "basePrice": 1000.0,
+    "recommendedPrice": 1200.0,
+    "premiumSeats": 81,
+    "forecastDemand": 1.54,
+    "expectedRevenue": 1849.34,
+    "trendLabel": "STABLE",
+    "status": "PENDING_ADMIN_APPROVAL",
+    "explanation": "Price was increased from Rs 1000 to Rs 1200 because trend is STABLE, sold ratio is 83.5%, latest views are 1280, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap."
+  }
+]

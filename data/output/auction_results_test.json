@@ -1,0 +1,13 @@
+{
+  "eventId": "E001",
+  "auctionType": "MULTI_UNIT_SECOND_PRICE",
+  "premiumSeats": 2,
+  "winners": [
+    {"userId": "U101", "bidderName": "U101", "bidAmount": 2500, "finalPayment": 1800},
+    {"userId": "U102", "bidderName": "U102", "bidAmount": 2200, "finalPayment": 1800}
+  ],
+  "clearingPrice": 1800,
+  "reservePrice": 1200,
+  "finalPayment": 1800,
+  "explanation": "Top 2 eligible bidders won premium seats. Bids below the dynamic reserve were excluded. Each winner pays the next-highest losing bid or the reserve price, which follows a uniform-price second-price auction."
+}

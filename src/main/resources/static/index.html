@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FestQuant demand, pricing and auction operations dashboard">
+  <title>FestQuant — Revenue Operations</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="FestQuant home">
+        <span class="brand-mark">FQ</span>
+        <span><strong>FestQuant</strong><small>Revenue intelligence</small></span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <button class="nav-item active" data-view="overview" title="Open the executive dashboard with revenue, demand and pricing summary.">
+          <span class="nav-icon">⌂</span> Overview
+        </button>
+        <button class="nav-item" data-view="live" title="Open the live demand simulator and watch prices update every two seconds.">
+          <span class="nav-icon">≋</span> Live market
+        </button>
+        <button class="nav-item" data-view="events" title="View all event details, capacities, venues and ticket limits.">
+          <span class="nav-icon">▦</span> Events
+        </button>
+        <button class="nav-item" data-view="pricing" title="View model-based price recommendations and explanations.">
+          <span class="nav-icon">↗</span> Pricing
+        </button>
+        <button class="nav-item" data-view="auction" title="Preview submitted bids and run the second-price auction.">
+          <span class="nav-icon">◇</span> Auctions
+        </button>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="eyebrow">Decision engine</span>
+        <strong>Five-stage pipeline</strong>
+        <p>Forecast, model, optimise, allocate and explain.</p>
+        <div class="pipeline-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="profile">
+        <span class="avatar">AO</span>
+        <span><strong>Admin Ops</strong><small>Festival control</small></span>
+        <span class="online" title="Online"></span>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Operations / <span id="breadcrumb">Overview</span></p>
+          <h1 id="page-title">Good evening, Admin.</h1>
+        </div>
+        <div class="top-actions">
+          <span class="system-state"><i></i> Engine live</span>
+          <button class="secondary-button" id="refresh-button" title="Runs the complete backend pipeline again: forecast demand, recompute price recommendations, refresh dashboard metrics and update output files.">Run pipeline</button>
+        </div>
+      </header>
+
+      <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+      <section class="view active" id="overview-view">
+        <div class="hero-row">
+          <div>
+            <p class="section-kicker">Today at a glance</p>
+            <h2>Demand is moving. Your prices should too.</h2>
+            <p class="section-copy">Live recommendations combine Holt trend forecasting with nonlinear demand modelling.</p>
+          </div>
+          <p class="last-updated">Last computed <strong id="updated-time">—</strong></p>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card accent">
+            <div class="metric-heading"><span>Projected revenue</span><span class="trend-pill positive">Live</span></div>
+            <strong id="metric-revenue">—</strong>
+            <p>Across all modelled events</p>
+            <div class="spark-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-heading"><span>Active events</span><span class="card-icon">▦</span></div>
+            <strong id="metric-events">—</strong>
+            <p>Loaded from the festival schedule</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-heading"><span>Average price move</span><span class="card-icon">↗</span></div>
+            <strong id="metric-lift">—</strong>
+            <p>Bounded by the 20% fairness cap</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-heading"><span>Rising demand</span><span class="card-icon">≋</span></div>
+            <strong id="metric-rising">—</strong>
+            <p>Events with upward momentum</p>
+          </article>
+        </div>
+
+        <div class="overview-grid">
+          <article class="panel performance-panel">
+            <div class="panel-head">
+              <div><p class="section-kicker">Portfolio view</p><h3>Revenue opportunity</h3></div>
+              <div class="legend"><span><i class="base"></i>Base</span><span><i class="recommended"></i>Recommended</span></div>
+            </div>
+            <div id="revenue-chart" class="revenue-chart" aria-label="Base and recommended prices by event"></div>
+          </article>
+
+          <article class="panel momentum-panel">
+            <div class="panel-head">
+              <div><p class="section-kicker">Model signal</p><h3>Demand momentum</h3></div>
+              <span class="muted-label">Next 24h</span>
+            </div>
+            <div id="momentum-list" class="momentum-list"></div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div><p class="section-kicker">Recommended actions</p><h3>Event pricing desk</h3></div>
+            <button class="text-button" data-go="pricing" title="Go to the full pricing desk with explanations for every event.">View all recommendations →</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Event</th><th>Demand</th><th>Current</th><th>Recommended</th><th>Expected revenue</th><th>Status</th></tr></thead>
+              <tbody id="overview-table"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="view" id="live-view">
+        <div class="section-title-row">
+          <div>
+            <p class="section-kicker">Compressed-time simulation</p>
+            <h2>Live demand control room</h2>
+            <p class="section-copy">Each pulse represents one simulated sales interval. Rolling demand updates the fair live price automatically.</p>
+          </div>
+          <span class="live-connection"><i></i><span id="live-connection-label">Connecting</span></span>
+        </div>
+
+        <article class="panel live-command-bar">
+          <div>
+            <p class="section-kicker">Scenario</p>
+            <strong id="live-scenario-label">Normal demand</strong>
+            <small>Change the market regime to demonstrate how prices respond.</small>
+          </div>
+          <div class="scenario-controls" aria-label="Demand scenario controls">
+            <button class="scenario-button" data-scenario="COOLING" title="Simulate a weaker market so rolling demand and live prices cool down.">Demand drop</button>
+            <button class="scenario-button active" data-scenario="NORMAL" title="Return the live simulator to the normal demand baseline.">Normal</button>
+            <button class="scenario-button" data-scenario="SURGE" title="Simulate a demand spike so rolling demand and live prices rise.">Demand surge</button>
+            <button class="scenario-button pause" id="live-pause-button" title="Pause or resume the live demand stream.">Pause</button>
+          </div>
+        </article>
+
+        <div class="live-layout">
+          <article class="panel live-chart-panel">
+            <div class="panel-head">
+              <div><p class="section-kicker">Selected event</p><h3>Demand and price movement</h3></div>
+              <select id="live-event-select" aria-label="Live event"></select>
+            </div>
+            <div class="live-metrics">
+              <div><small>Tickets this pulse</small><strong id="live-latest-demand">—</strong><span id="live-trend-badge" class="signal stable">Stable</span></div>
+              <div><small>Rolling demand</small><strong id="live-rolling-demand">—</strong><span>tickets / interval</span></div>
+              <div><small>Live price</small><strong id="live-current-price">—</strong><span id="live-price-change">—</span></div>
+            </div>
+            <div class="live-chart" aria-label="Live demand and price history">
+              <div class="chart-grid" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <svg id="live-chart-svg" viewBox="0 0 700 240" preserveAspectRatio="none" role="img">
+                <polyline id="live-demand-line" class="demand-line" points=""></polyline>
+                <polyline id="live-price-line" class="price-line" points=""></polyline>
+              </svg>
+              <div class="live-chart-legend">
+                <span><i class="demand"></i>Rolling demand</span>
+                <span><i class="price"></i>Live price</span>
+                <small>Latest 24 pulses</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel live-feed-panel">
+            <div class="panel-head">
+              <div><p class="section-kicker">All events</p><h3>Live market feed</h3></div>
+              <span class="pulse-label"><i></i>2 sec pulse</span>
+            </div>
+            <div id="live-event-list" class="live-event-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="events-view">
+        <div class="section-title-row">
+          <div><p class="section-kicker">Festival programme</p><h2>Event portfolio</h2><p class="section-copy">Capacity, timing and commercial guardrails in one place.</p></div>
+          <label class="search"><span>⌕</span><input id="event-search" type="search" placeholder="Search events"></label>
+        </div>
+        <div id="event-grid" class="event-grid"></div>
+      </section>
+
+      <section class="view" id="pricing-view">
+        <div class="section-title-row">
+          <div><p class="section-kicker">Revenue optimisation</p><h2>Pricing recommendations</h2><p class="section-copy">Every recommendation is explainable and kept within a fair operating range.</p></div>
+          <button class="primary-button" id="recompute-button" title="Re-runs forecasting and dynamic pricing for every event.">Recompute prices</button>
+        </div>
+        <div id="pricing-list" class="pricing-list"></div>
+      </section>
+
+      <section class="view" id="auction-view">
+        <div class="section-title-row">
+          <div><p class="section-kicker">Premium allocation</p><h2>Second-price auction desk</h2><p class="section-copy">Truthful-bidding incentives, deterministic tie handling and price-aware reserves.</p></div>
+        </div>
+        <div class="auction-layout">
+          <article class="panel auction-control">
+            <p class="section-kicker">New auction</p>
+            <h3>Choose an event</h3>
+            <label class="field-label" for="auction-event">Event</label>
+            <select id="auction-event"></select>
+            <div id="auction-context" class="auction-context"></div>
+            <div class="bid-preview-head">
+              <div><p class="section-kicker">Sealed bids</p><strong>Submitted bidders</strong></div>
+              <span id="auction-bid-count">0 bids</span>
+            </div>
+            <div id="auction-bid-list" class="auction-bid-list">
+              <p class="bid-loading">Loading submitted bids…</p>
+            </div>
+            <button class="primary-button full" id="run-auction-button" title="Runs the single-seat Vickrey auction: highest eligible bidder wins and pays the second-highest eligible bid or reserve.">Run Vickrey auction</button>
+          </article>
+          <article class="panel auction-result">
+            <div id="auction-empty" class="empty-state">
+              <span>◇</span><h3>No auction selected</h3><p>Run the Vickrey model to reveal the winning bid and second-price payment.</p>
+            </div>
+            <div id="auction-result-content" hidden></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
