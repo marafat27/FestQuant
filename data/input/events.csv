@@ -1,0 +1,11 @@
+event_id,event_name,category,venue_id,capacity,base_price,min_price,max_price,event_datetime,premium_seats,slot_popularity
+E001,Pro Night,Music,V001,1200,650,450,1150,2026-08-10 20:00,114,1.45
+E002,Standup Comedy,Comedy,V002,533,1250,900,2200,2026-08-11 19:00,55,0.77
+E003,Dance Battle,Dance,V003,227,1150,800,2000,2026-08-12 18:00,24,1.38
+E004,EDM Night,Music,V004,1200,1000,700,1750,2026-08-13 20:00,69,0.84
+E005,Battle of Bands,Music,V005,698,1200,850,2100,2026-08-14 19:00,53,1.24
+E006,Drama Showcase,Drama,V001,1007,300,200,550,2026-08-15 18:00,70,1.28
+E007,Fashion Parade,Fashion,V002,749,1150,800,2000,2026-08-16 20:00,42,1.18
+E008,Poetry Slam,Literary,V003,552,800,550,1400,2026-08-17 19:00,77,1.03
+E009,Classical Fusion,Music,V004,914,500,350,900,2026-08-18 18:00,113,0.72
+E010,Open Mic Finale,Comedy,V005,796,1000,700,1750,2026-08-19 20:00,81,1.39

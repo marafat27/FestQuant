@@ -1,0 +1,12 @@
+{
+  "eventId": "E001",
+  "auctionType": "SINGLE_SEAT_SECOND_PRICE",
+  "premiumSeats": 1,
+  "winners": [
+    {"userId": "U022", "bidderName": "Riya Chatterjee", "bidAmount": 2350, "finalPayment": 2300}
+  ],
+  "clearingPrice": 2300,
+  "reservePrice": 975,
+  "finalPayment": 2300,
+  "explanation": "Highest eligible bidder wins one premium seat and pays the second-highest eligible bid or the dynamic reserve price, whichever is higher. This second-price rule makes truthful bidding rational."
+}

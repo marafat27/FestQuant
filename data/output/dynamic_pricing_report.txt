@@ -1,0 +1,93 @@
+FestQuant Java OOP Dynamic Pricing Report
+=========================================
+
+Event ID: E001
+Base price: Rs 650
+Recommended price: Rs 778
+Forecast demand: 2.34
+Expected revenue: Rs 1818.51
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 650 to Rs 778 because trend is STABLE, sold ratio is 95.9%, latest views are 1627, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E002
+Base price: Rs 1250
+Recommended price: Rs 1488
+Forecast demand: 0.74
+Expected revenue: Rs 1105.42
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 1250 to Rs 1488 because trend is STABLE, sold ratio is 70.5%, latest views are 792, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E003
+Base price: Rs 1150
+Recommended price: Rs 978
+Forecast demand: 0.00
+Expected revenue: Rs 0.00
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was reduced from Rs 1150 to Rs 978 because trend is STABLE, sold ratio is 100.0%, latest views are 1242, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E004
+Base price: Rs 1000
+Recommended price: Rs 1200
+Forecast demand: 8.08
+Expected revenue: Rs 9692.17
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 1000 to Rs 1200 because trend is STABLE, sold ratio is 65.3%, latest views are 918, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E005
+Base price: Rs 1200
+Recommended price: Rs 1420
+Forecast demand: 0.58
+Expected revenue: Rs 825.12
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 1200 to Rs 1420 because trend is STABLE, sold ratio is 84.5%, latest views are 1378, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E006
+Base price: Rs 300
+Recommended price: Rs 355
+Forecast demand: 2.27
+Expected revenue: Rs 807.59
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 300 to Rs 355 because trend is STABLE, sold ratio is 73.0%, latest views are 1126, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E007
+Base price: Rs 1150
+Recommended price: Rs 1378
+Forecast demand: 4.97
+Expected revenue: Rs 6845.31
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 1150 to Rs 1378 because trend is STABLE, sold ratio is 70.0%, latest views are 1103, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E008
+Base price: Rs 800
+Recommended price: Rs 955
+Forecast demand: 3.17
+Expected revenue: Rs 3028.90
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 800 to Rs 955 because trend is STABLE, sold ratio is 76.8%, latest views are 952, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E009
+Base price: Rs 500
+Recommended price: Rs 600
+Forecast demand: 0.55
+Expected revenue: Rs 327.38
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 500 to Rs 600 because trend is STABLE, sold ratio is 65.2%, latest views are 800, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
+Event ID: E010
+Base price: Rs 1000
+Recommended price: Rs 1200
+Forecast demand: 1.54
+Expected revenue: Rs 1849.34
+Trend: STABLE
+Status: PENDING_ADMIN_APPROVAL
+Explanation: Price was increased from Rs 1000 to Rs 1200 because trend is STABLE, sold ratio is 83.5%, latest views are 1280, and nonlinear demand is combined with Holt time-series forecasting. The final price respects min/max limits and the 20% fairness cap.
+
