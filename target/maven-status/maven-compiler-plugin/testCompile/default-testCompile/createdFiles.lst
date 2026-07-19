@@ -1,0 +1,8 @@
+com\festquant\PricingStrategyTest.class
+com\festquant\DataValidationServiceTest.class
+com\festquant\MultiUnitAuctionTest.class
+com\festquant\JsonExporterTest.class
+com\festquant\CsvBidRepositoryTest.class
+com\festquant\LivePricingPolicyTest.class
+com\festquant\TimeSeriesForecasterTest.class
+com\festquant\VickreyAuctionTest.class
